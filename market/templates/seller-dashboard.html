@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/seller-dashboard.css')}}">
+</head>
+<body>
+    <nav>
+        <div class="company-name">
+            <h2>MARKET</h2>
+        </div>
+        <div class="product-search">
+            <input type="search" class="product-search" placeholder="Search For Product" name="search" id="search">
+        </div>
+        <div class="nav-links">
+            <a href="/seller-dashboard" id="sign-up">Dash-Board</a>
+            <a href="/auth/logout">Logout</a>
+          
+        </div>
+    </nav>
+    <main>
+        <div class="container-fluid">
+            <div class="account-header">
+                
+            </div>
+            <br>
+            <div class="account-details">
+                <h2>Withdrawal Details</h2>
+                <p> note: contact admin for any change in existing withdrawal details</p>
+                <br>
+                <br>
+                <label for="account-number">Account-Number</label>
+                <br>
+                <br>
+                <input type="number" name="account-number" id="">
+                <br>
+                <br>
+                <label for="account-type">Select Bank</label>
+                <br>
+                <br>
+                <select id="nigerian_banks">
+                    <option value="access">Access Bank PLC</option>
+                    <option value="zenith">Zenith Bank PLC</option>
+                    <option value="gtb">Guaranty Trust Bank (GTBank)</option>
+                    <option value="first_bank">First Bank of Nigeria Limited</option>
+                    <option value="uba">United Bank for Africa (UBA)</option>
+                    <option value="ecobank">Ecobank Nigeria</option>
+                    <option value="union">Union Bank of Nigeria PLC</option>
+                    <option value="fidelity">Fidelity Bank PLC</option>
+                    <option value="sterling">Sterling Bank PLC</option>
+                    <option value="wema">Wema Bank PLC</option>
+                    <option value="polaris">Polaris Bank</option>
+                    <option value="stanbic">Stanbic IBTC Bank</option>
+                    <option value="fcmb">First City Monument Bank (FCMB)</option>
+                    <option value="keystone">Keystone Bank Limited</option>
+                    <option value="unity">Unity Bank PLC</option>
+                    <option value="heritage">Heritage Bank Plc</option>
+                    <option value="jaiz">Jaiz Bank Plc</option>
+                    <option value="standard_chartered">Standard Chartered Bank Nigeria</option>
+                    <option value="citibank">Citibank Nigeria Limited</option>
+                    <option value="rmbn">Rand Merchant Bank Nigeria Limited (RMBN)</option>
+                    <option value="suntrust">SunTrust Bank Nigeria Limited</option>
+                    <option value="providus">Providus Bank Limited</option>
+                    <option value="globus">Globus Bank</option>
+                    <option value="coronation">Coronation Merchant Bank</option>
+                    <option value="titan_trust">Titan Trust Bank Limited</option>
+                    <option value="fsdh">FSDH Merchant Bank Limited</option>
+                    <option value="sunrise_microfinance">Sunrise Microfinance Bank Limited</option>
+                    <option value="parallex">Parallex Bank</option>
+                    <option value="credit_direct">Credit Direct Limited</option>
+                </select>
+                <br>
+                <br>
+
+
+                <input type="text" placeholder="ACCOUNT NAME" readonly>
+
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
