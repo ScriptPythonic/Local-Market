@@ -27,4 +27,15 @@ class Rider(db.Model,UserMixin):
     rider_password = db.Column(db.String(150))
     rider_state = db.Column(db.String(120))
     rider_role = 'rider'
-   
+
+# Suggestion
+class User(db.Model,UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name =  db.Column(db.String(50))
+    last_name =  db.Column(db.String(150), unique=True)
+    email =  db.Column(db.String(150), unique=True)
+    password = db.Column(db.String(150))
+    state = db.Column(db.String(120))
+    role = 'user' # options = ['seller', 'rider', 'admin'] 
+# So the user model will cover everybody, handle more case senarios and no need to repeat code for modifying models of different roles
+
