@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/seller-dashboard.css')}}">
+</head>
+<body>
+    <nav>
+        <div class="company-name">
+            <h2>MARKET</h2>
+        </div>
+        <div class="product-search">
+            <input type="search" class="product-search" placeholder="Search For Product" name="search" id="search">
+        </div>
+        <div class="nav-links">
+            <a href="/seller-dashboard" id="sign-up">Dash-Board</a>
+            <a href="/auth/logout">Logout</a>
+          
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for category, message in messages %}
+                    <li class="flash-message {{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    </nav>
+    <main>
+        <div class="container-fluid">
+            <div class="account-header">
+                <p> 
+                    <h2>MARKET</h2>
+                </p>
+
+                <p>
+                    <h2 class="balance"><span>&#8358;</span>0.00</h2>
+                </p>
+
+                <div class="seller_information"></div>
+            </div>
+            <br>
+            <div class="account-details">
+                <h2>Withdrawal </h2>
+                <p style="color: red;"> note: contact admin for any change in existing withdrawal details</p>
+               <label for="Amount">Amount </label>
+               <br>
+               <input type="number" name="" id="">
+               <br>
+                <label for="account-number">Account-Number</label>
+                <br>
+                
+                <input type="number" name="account-number" id="">
+                <br>
+                <br>
+                <label for="account-type">Select Bank</label>
+                <br>
+                <br>
+                <select id="nigerian_banks">
+                    <option value="access">Access Bank PLC</option>
+                    <option value="zenith">Zenith Bank PLC</option>
+                    <option value="gtb">Guaranty Trust Bank (GTBank)</option>
+                    <option value="first_bank">First Bank of Nigeria Limited</option>
+                    <option value="uba">United Bank for Africa (UBA)</option>
+                    <option value="ecobank">Ecobank Nigeria</option>
+                    <option value="union">Union Bank of Nigeria PLC</option>
+                    <option value="fidelity">Fidelity Bank PLC</option>
+                    <option value="sterling">Sterling Bank PLC</option>
+                    <option value="wema">Wema Bank PLC</option>
+                    <option value="polaris">Polaris Bank</option>
+                    <option value="stanbic">Stanbic IBTC Bank</option>
+                    <option value="fcmb">First City Monument Bank (FCMB)</option>
+                    <option value="keystone">Keystone Bank Limited</option>
+                    <option value="unity">Unity Bank PLC</option>
+                    <option value="heritage">Heritage Bank Plc</option>
+                    <option value="jaiz">Jaiz Bank Plc</option>
+                    <option value="standard_chartered">Standard Chartered Bank Nigeria</option>
+                    <option value="citibank">Citibank Nigeria Limited</option>
+                    <option value="rmbn">Rand Merchant Bank Nigeria Limited (RMBN)</option>
+                    <option value="suntrust">SunTrust Bank Nigeria Limited</option>
+                    <option value="providus">Providus Bank Limited</option>
+                    <option value="globus">Globus Bank</option>
+                    <option value="coronation">Coronation Merchant Bank</option>
+                    <option value="titan_trust">Titan Trust Bank Limited</option>
+                    <option value="fsdh">FSDH Merchant Bank Limited</option>
+                    <option value="sunrise_microfinance">Sunrise Microfinance Bank Limited</option>
+                    <option value="parallex">Parallex Bank</option>
+                    <option value="credit_direct">Credit Direct Limited</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="account-name">Account Name </label>
+                <br>
+                <br>
+                <input type="text" placeholder="ACCOUNT NAME" >
+
+                <input type="submit" value="WITHDRAW">
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <section>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="upload-media">
+            <h2>Upload Products Here</h2>
+            <div class="product-Information">
+                <input type="file" class='product-img' name="product-img" id="">
+                <h3>Categories</h3>
+                <p>Your product Should be under What Categories </p>
+                <select name="product-categories"  class="product-categories" id="">
+                    <option value="Grocery"> Grocery </option>
+                    <option value="House-Hold"> House-Hold Appliances </option>
+                    <option value="Health and Beauty"> Health and Beauty </option>
+                    <option value="Baby and Infant Product">Baby and Infant Product  </option>
+                    <option value="Toy and Games"> Toy and Games </option>
+                    <option value="Electronic Appliances">Electronic Appliances </option>
+                    <option value="Jewelry And Accessories"> Jewelries and Accessories</option>
+                    <option value="Clothing and Apparel">Clothing and Apparel </option>
+                    <option value="Books and Media"> Books and Media  </option>
+                    <option value="other"> Others  </option>
+                </select>
+                <p>Product Price</p>
+                <input type="number" name="product-price" id="product-price" placeholder="Product Price">
+                <p>Product Description</p>
+                <input type="text" name="product-description" class="product-description" id="product-description">
+                <p>Product Name</p>
+                <input type="text" name="product-name" class="product-description" id="product-name">
+                <p>Amount  To Recieve On Product</p>
+                <input type="text" name="recieved-amount" class="product-description" id="recieved-amount" readonly>
+                <input type="text" name="product-description" class="product-description" id="product-description">
+                <input type="submit" value="Submit" class="product-description">
+            </div>
+        </div>
+    </form>
+    
+        <div class="recent-posted-project">
+            <h2>Recently Posted Product</h2>
+            <div class="posted-product">
+                <h2>No Product Posted Yet </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="customer-table">
+        <h1>Customer Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Customer Email</th>
+                    <th>Rider Email</th>
+                    <th>Unique-Code</th>
+                    <th>Approved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>johndoe@example.com</td>
+                    <td>rider@example.com</td>
+                    <td>FCB-123-  WRN-52-AB</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>janesmith@example.com</td>
+                    <td>rider2@example.com</td>
+                    <td>FCB-123-  WRN-52-AB</td>
+                    
+                    <td>No</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY MARKET</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing-page.css')}}">
+</head>
+<body>
+    <nav>
+        <div class="company-name">
+            <h2 id="company-name">MARKET</h2>
+        </div>
+        <div class="product-search">
+            <input type="search" class="product-search"   placeholder="Search For Product" name="search" id="search">
+        </div>
+        <div class="nav-links">
+            <a href="" id="sign-up">Cart</a>
+            <a href="" id="sign-in">Order</a>
+            {% if user.role == 'admin' %}
+                <a href="/admin" {% if endpoint == 'dashboard' %} class="link active text-md w-600 button-md" {% else %} class="link text-md w-600 button-md" {% endif %}>Admin</a>
+                {% endif %}
+            <a href="/auth/logout" id='' >logout</a>
+            <button type="button">MENU</button>
+        </div>
+    </nav>
+   <main id="main">
+    <div class="container-fluid">
+        <div class="container-fluid-words">
+            <p><h2>Smart Strategies to Reduce Transportation Costs While Grocery Shopping</h2></p>
+            <p>
+                Get Ready to Save Big on Groceries and Transportation! Discover Awesome 
+                Tips to Trim Your Grocery Bills and Cut Down on Transportation Costs, All While Enjoying Exclusive Discounts and Insights on Our Website
+                 –<span> Your Ultimate Shopping Companion!</span>
+            </p>
+        </div>
+    </div>
+   </main>
+   <section id="section">
+    <h2 class="grocery-header">Discover Our Wide Range of Categories</h2>
+    <div class="product-image-display">
+        <div class="product-image-box">
+           <a href="#">
+            <div class="product-image">
+                <img src="{{ url_for('static', filename='images/grocery-image.jfif')}}" alt="" >
+                <h5 class="product-name">Grocery </h5>
+            </div>
+           </a>
+
+        </div>
+
+        <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/house-hold.jfif')}}" alt="" >
+                 <h5 class="product-name">House-hold Appliances</h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/health-beauty.jfif')}}" alt="" >
+                 <h5 class="product-name">Health and Beauty</h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/infant-product.jfif')}}" alt="" >
+                 <h5 class="product-name">Baby And Infant Product</h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/electronic-appliances.jfif')}}" alt="" >
+                 <h5 class="product-name">Electronic Appliances </h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/jelwries.jfif')}}" alt="" >
+                 <h5 class="product-name">Jewelry And Accessories </h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/clothes.jfif')}}" alt="" >
+                 <h5 class="product-name">Clothing and Apparel</h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/books-media.jfif')}}" alt="" >
+                 <h5 class="product-name">Books And Media</h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/toy-image.jpg')}}" alt="" >
+                 <h5 class="product-name">Toy And Games </h5>
+             </div>
+            </a>
+ 
+         </div>
+
+         <div class="product-image-box">
+            <a href="#">
+             <div class="product-image">
+                 <img src="{{ url_for('static', filename='images/other-image.jfif')}}" alt="" >
+                 <h5 class="product-name">Other </h5>
+             </div>
+            </a>
+ 
+         </div>
+    </div>
+    
+   </section>
+   <script src="{{ url_for('static',filename='js/landing.js')}}"></script>
+</body>
+</html>
