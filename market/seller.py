@@ -19,6 +19,18 @@ def seller_dashboard():
     
     return render_template('Seller/seller-dashboard.html', user = current_user)
 
+@sellers.route('/seller-upload', methods =['GET'])
+@login_required('seller')
+def seller_upload():
+    
+    return render_template('Seller/upload-product.html', user = current_user)
+
+@sellers.route('/seller-order-overview', methods =['GET'])
+@login_required('seller')
+def seller_order():
+    
+    return render_template('Seller/order-product.html', user = current_user)
+
 @sellers.route('/upload', methods=['POST'])
 @login_required('seller')
 def upload_product():

@@ -4,7 +4,7 @@ from flask_login import login_required,logout_user,login_user,current_user
 from .models import User,Seller,Rider
 from . import db 
 import bcrypt 
-from .decorator import login_required
+
 
 auth = Blueprint('auth', __name__)
 
@@ -182,8 +182,10 @@ def rider_sign_up():
     
     return render_template('Auth/rider-sign-up.html')
 
-role = current_user.user_role
-print(role,'this user is a:')
-
-#
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('Logged out successfully!', category= 'success')
+    return redirect(url_for('auth.login'))
 

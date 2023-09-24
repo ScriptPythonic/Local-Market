@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY MARKET</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/landing-page.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css')}}">
+   <script src="{{ url_for('static',filename='js/landing.js')}}"></script>
+
+
 </head>
 <body>
     <nav>
@@ -18,7 +22,7 @@
             <a href="" id="sign-up">Cart</a>
             <a href="" id="sign-in">Order</a>
             {% if user.role == 'admin' %}
-                <a href="/admin" {% if endpoint == 'dashboard' %} class="link active text-md w-600 button-md" {% else %} class="link text-md w-600 button-md" {% endif %}>Admin</a>
+                <a href="/admin">Admin</a>
                 {% endif %}
             <a href="/auth/logout" id='' >logout</a>
             <button type="button">MENU</button>
@@ -141,6 +145,6 @@
     </div>
     
    </section>
-   <script src="{{ url_for('static',filename='js/landing.js')}}"></script>
+    {% extends "Assest/footer.html" %}
 </body>
 </html>

@@ -30,43 +30,46 @@
         </ul>
     </nav>
     <main>
-        <section class="product-overview">
-            <h2>Product Overview</h2>
-            <div class="product-links">
-                <a href="/seller-home" class="active">Products</a>
-                <a href="/seller-upload">Upload Product</a>
-            </div>
+        <h2>Order Overview</h2>
+        <div class="order-nav">
+            <a href="#all">All</a>
+            <a href="#approved">Approved</a>
+            <a href="#declined">Declined</a>
+        </div>
+        <div class="order-table">
             <table>
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Ordered Date</th>
                         <th>Price</th>
-                        <th>Sales Price</th>
-                        <th>Created</th>
-                        <th>Approved</th>
-                        <th>Delete</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                 
-                    
+                   
+                    <tr>
+                        <td>Product A</td>
+                        <td>5</td>
+                        <td>2023-09-30</td>
+                        <td>2000</td>
+                        <td>
+                            <button class="approve-btn">Approve</button>
+                            <button class="decline-btn">Decline</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
                 </tbody>
             </table>
-            <div class="showPerPage">
-                <label for="perPage">Show per page:</label>
-                <select id="perPage">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="all">All</option>
-                </select>
-            </div>
-            
-        </section>
+        </div>
     </main>
     <footer>
         <p>&copy; 2023 MARKET SELLER PAGE</p>
     </footer>
 </body>
 </html>
+
+
+
+

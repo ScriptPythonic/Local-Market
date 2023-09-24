@@ -31,6 +31,7 @@ color: rgb(138, 198, 74);
  
 }
 
+
 .product-search{
     width: 300px;
     height: 40px;
@@ -89,29 +90,43 @@ font-size: 40px;
 
 section{
     width: 100%;
-    height: 50vh;
+   
 }
 
 .grocery-header{
     text-align: center;
     font-size: 40px;
-    color: rgb(138, 198, 74);
-   
+    color: rgb(138, 198, 74); 
 
+}
+
+.product{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+  
 }
 .product-image-display {
        display: grid;
-       grid-template-columns: auto auto auto auto;
+       grid-template-columns: auto auto auto auto auto;
        gap: 20px; 
+       width: 80%;
+       height: auto;
+       box-sizing: content-box;
       }
 
     
 
    .product-image-box {
        background-color: #f5f5f5; 
-       border: 1px solid #ddd;
-       padding: 10px;
+        width: 95%;
+        height: auto;
        text-align: center;  
+       border-radius: 10px;
+     
+    
        
      }
 
@@ -123,11 +138,129 @@ section{
        text-decoration: none; 
        color: #333;
       }
-   .product-image img {
-       max-width: 150px;
-       max-height: 150px; 
+   .product-image{
+      width: 100%; 
+      height: 100%;
+    
       }
    .product-name {
-       margin-top: 10px; 
+       margin-top: 5px; 
+        font-size: 13px; 
+       
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   }
+       .about-courier{
+        display: flex;
+        margin-top: 30px;
        }
-   
+
+       .courier-image{
+        width: 48%;
+        height: 60vh;
+        flex: 1;
+        background-image: url(../images/courier_image.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 1px 1px rgba(118, 117, 120, 0.7);
+        border-radius: 30px;
+        background-position: center;
+
+       }
+
+       .courier-comment{
+        flex: 1;
+        width: 48%;
+
+       }
+
+       .courier-comment-h2{
+        width: 80%;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 50px;
+        color: rgb(138, 198, 74);
+        font-size: 27px;
+       }
+
+       footer {
+        background-color: #ddd;
+        color: #333;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .header {
+        margin-bottom: 20px;
+        text-align: left; /* Align the header content to the left */
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: rgb(138, 198, 74);
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .language {
+        margin-bottom: 20px;
+        text-align: left; /* Align the language div content to the left */
+    }
+    
+    .language h3,.country h3 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+        color: #333;
+        padding-left: 7px;
+    }
+    
+    select {
+        width: 210px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: #fff;
+        color: #333;
+        margin-left: 10px; /* Adjust the margin-left to position the select elements */
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .footer-section {
+        flex: 1;
+        max-width: 200px;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: rgb(138, 198, 74);
+    }
+    
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    footer ul li {
+        margin: 10px 0;
+    }
+    
+    footer a {
+        color: #666;
+        text-decoration: none;
+        font-size: 1em;
+        transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+        color: rgb(138, 198, 74);
+        text-decoration: underline;
+    }
+    
